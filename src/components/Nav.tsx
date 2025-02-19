@@ -1,25 +1,23 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react"
+import NavButton from "./NavButton.tsx"
 
 const Nav: React.FC = () => {
-  const navigate = useNavigate();
+    return (
+        <div className="nav-bar">
+            <div className="image-name">
+                <img
+                    className="kettle"
+                    src={"/works/2020/kettle/kettle_close.jpg"}
+                />
+                <div className="name">Ben Capp</div>
+            </div>
+            <div className="nav-buttons">
+                <NavButton name="About"/>
+                <NavButton name="Gallery"/>
+                <NavButton name="CV"/>
+            </div>
+        </div>
+    )
+}
 
-  const goToAbout = () => {
-    navigate("/about");
-  };
-
-  return (
-    <div style={{ display: "flex" }}>
-      <img
-        src={"images/kettle.jpg"}
-        style={{ width: "100px", borderRadius: "20px" }}
-      />
-      <div>Ben Capp</div>
-      <button onClick={() => navigate("/gallery")}>Gallery</button>
-      <button onClick={() => navigate("/about")}>About</button>
-      <button onClick={() => navigate("/shop")}>Shop</button>
-    </div>
-  );
-};
-
-export default Nav;
+export default Nav

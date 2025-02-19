@@ -1,30 +1,33 @@
-import React from "react";
-import "./App.css";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react"
+import "./App.css"
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 
-import Nav from "./components/Nav.tsx";
-import Home from "./components/Home.tsx";
-import About from "./components/About.tsx";
-import Gallery from "./components/Gallery.tsx";
-import Shop from "./components/Shop.tsx";
+import Nav from "./components/Nav.tsx"
+import About from "./components/About.tsx"
+import Gallery from "./components/Gallery.tsx"
+import CV from "./components/CV.tsx"
+import GalleryYear from "./components/GalleryYear.tsx"
+
+export const years = ['2018', '2019', '2020', '2021', '2022', '2023', '2024']
 
 const App: React.FC = () => {
-  return (
-    <Router>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/shop" element={<Shop />} />
-      </Routes>
-    </Router>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src="images/kettle.jpg" className="App-logo" alt="logo" />
-    //   </header>
-    // </div>
-  );
-};
+    return (
+        <Router>
+            <Nav />
+            <Routes>
+                <Route path="/" element={<Navigate to="/about" replace />} />
+                <Route path="/gallery" element={<Gallery />} >
+                    <Route index element={<Navigate to="2024" replace />} />
 
-export default App;
+                    {years.map((year) => (
+                        <Route key={year} path={year} element={<GalleryYear year={year}/>}/>
+                    ))}
+                </Route>
+                <Route path="/about" element={<About />} />
+                <Route path="/cv" element={<CV />} />
+            </Routes>
+        </Router>
+    )
+}
+
+export default App
