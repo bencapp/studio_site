@@ -8,6 +8,7 @@ const Nav: React.FC = () => {
                 <img
                     className="kettle"
                     src={"/works/2020/kettle/kettle_close.jpg"}
+                    alt="kettle"
                 />
                 <div className="name">Ben Capp</div>
             </div>

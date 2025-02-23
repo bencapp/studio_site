@@ -10,7 +10,7 @@ const GalleryWorkTile: React.FC<GalleryWorkTileProps> = ({ imagePath, work }) =>
     return (
         <div>
             <div className="image-container">
-                <img className="work-primary-image" src={imagePath}></img>
+                <img className="work-primary-image" src={imagePath} alt={imagePath}></img>
             </div>
             <figcaption className="caption">{work.replace(/_/g, " ")}</figcaption>
         </div>

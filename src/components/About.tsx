@@ -4,7 +4,7 @@ const About: React.FC = () => {
     return (
         <div className="about">
             <div className="headshot-container">
-                <img className="headshot" src="/images/portrait.png"></img>
+                <img className="headshot" src="/images/portrait.png" alt="headshot"></img>
             </div>
             <p>
                 Hello! I am Ben Capp, a Philadelphia-based theater director, performance artist, and printmaker. 

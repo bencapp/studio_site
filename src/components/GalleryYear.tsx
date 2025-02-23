@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import GalleryWorkTile from "./GalleryWorkTile.tsx"
 import { GalleryMap } from "./Gallery.tsx"
 

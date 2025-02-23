@@ -1,7 +1,6 @@
-import React, { useEffect } from "react"
+import React from "react"
 import GalleryNavButton from "./GalleryNavButton.tsx"
 import { years } from "../App.tsx"
-import GalleryYear from "./GalleryYear.tsx"
 import { Outlet } from "react-router-dom"
 
 export const GalleryMap = {
