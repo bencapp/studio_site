@@ -1,13 +1,16 @@
-import React from "react"
+import React, { useContext } from "react"
 import NavButton from "./NavButton.tsx"
+import { ImagesContext } from "../App.tsx"
 
 const Nav: React.FC = () => {
+    const { images } = useContext(ImagesContext)
+    
     return (
         <div className="nav-bar">
             <div className="image-name">
                 <img
                     className="kettle"
-                    src={"/works/2020/kettle/kettle_close.jpg"}
+                    src={images && images['2020'] ? images['2020']['kettle_close'] : ''}
                     alt="kettle"
                 />
                 <div className="name">Ben Capp</div>
